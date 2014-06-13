@@ -39,11 +39,11 @@ use at your own risk, but feel free to log a bug/request
 
 Basic Parser Usage
 ------------------
-::
 
+    #!/usr/bin/env python3
     import argparse
     import sys
-    from PyQt4 import QtGui
+    from PyQt5 import QtWidgets
     import argparseui
     
     # EXPERIMENT USING BASIC PARSER     
@@ -59,24 +59,24 @@ Basic Parser Usage
     group.add_argument("-q", "--quiet", action="store_true")
     parser.add_argument("posarg", help="positional argument", type=str)
 
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     a = argparseui.ArgparseUi(parser)
     a.show()
     app.exec_()
 
     if a.result() == 1: # Ok pressed
         parsed_args = a.parse_args() # ask argparse to parse the options
-        print parsed_args            # print the parsed_options
+        print(parsed_args)            # print the parsed_options
 
     # Do what you like with the arguments...
 
 Example using save/load button and keeping the dialog open when pressing ok
 -----------------------------------------------------------------------------------------------------
-::
 
+    #!/usr/bin/env python3
     import argparse
     import sys
-    from PyQt4 import QtGui
+    from PyQt5 import QtWidgets
     import argparseui
 
     def do_something(argparseuiinstance):
@@ -87,7 +87,7 @@ Example using save/load button and keeping the dialog open when pressing ok
     parser.add_argument("-m", "--make-argument-true", help="optional boolean argument", action="store_true")
     parser.add_argument("-o","--make-other-argument-true", help="optional boolean argument 2", action="store_true",  default=True)
 
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     a =     argparseui.ArgparseUi(parser,use_save_load_button=True,ok_button_handler=do_something)
     a.show()
     app.exec_()
@@ -98,7 +98,7 @@ Example using save/load button and keeping the dialog open when pressing ok
 Extended features
 -----------------
 
-You can pass some extra command line arguments to ArgparseUi::
+You can pass some extra command line arguments to ArgparseUi:
 
   *helptext_default* = string [default: ' [default=%(default)s]']
   this argument can be used to customize the default value annotations in the ui
@@ -139,3 +139,4 @@ The following people have contributed to argparseui
 
   * Stefaan Himpe
   * Thomas Hisch
+
