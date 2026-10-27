@@ -20,7 +20,7 @@ import argparse
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-__VERSION__ = "0.0.4"
+from ._version import __VERSION__
 
 def comb(str1, str2):
     return str1 + str2

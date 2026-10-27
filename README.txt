@@ -140,3 +140,24 @@ The following people have contributed to argparseui
   * Stefaan Himpe
   * Thomas Hisch
 
+Additional notes
+----------------
+Create virtual environment:
+```
+python3 -m venv --system-site-packages ~/.venv/python3_user+system/
+```
+
+Activate virtual environment:
+```
+source ~/.venv/python3_user+system/bin/activate
+```
+
+Install as developer:
+```
+pip3 install --editable .
+```
+
+Uninstall:
+```
+pip3 uninstall argparseui
+```
